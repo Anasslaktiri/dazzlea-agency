@@ -198,10 +198,6 @@ ul {
   color: var(--color-white);
 }
 
-.logo-text .dot {
-  color: var(--color-green);
-}
-
 /* Desktop Nav Links */
 .nav-primary {
   display: flex;
