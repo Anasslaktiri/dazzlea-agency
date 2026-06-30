@@ -244,38 +244,6 @@
   /* ── Language Toggle ─────────────────────────── */
   // (handled above in Language Switcher section)
 
-  /* ── Contact Form Success ────────────────────── */
-  const contactForm = document.querySelector('form[data-contact]') ||
-                      document.querySelector('.contact-form form') ||
-                      document.querySelector('form');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const container = contactForm.parentElement;
-
-      // Build success UI with safe DOM methods (no innerHTML)
-      const wrapper = document.createElement('div');
-      wrapper.className = 'form-success';
-
-      const icon = document.createElement('i');
-      icon.className = 'fa-solid fa-circle-check';
-
-      const heading = document.createElement('h3');
-      heading.textContent = 'Brief envoyé !';
-
-      const body = document.createElement('p');
-      body.textContent = 'Nous vous répondons sous 24h ouvrées.';
-
-      wrapper.appendChild(icon);
-      wrapper.appendChild(heading);
-      wrapper.appendChild(body);
-
-      container.replaceChildren(wrapper);
-    });
-  }
-
   /* ── Portfolio Filter ────────────────────────── */
   const filterBtns  = document.querySelectorAll('.filter-btn');
   const portfolioCards = document.querySelectorAll('.portfolio-card');

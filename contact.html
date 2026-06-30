@@ -110,11 +110,18 @@
           <span class="section-label">Formulaire de Contact</span>
           <p class="form-title">Soumettez votre brief</p>
 
-          <form action="#" method="post">
+          <div data-fs-success style="display:none" class="form-success">
+            <i class="fa-solid fa-circle-check"></i>
+            <h3>Brief envoyé !</h3>
+            <p>Nous vous répondons sous 24h ouvrées.</p>
+          </div>
+          <div data-fs-error style="display:none" class="form-error-banner"></div>
+
+          <form id="contact-form" method="post">
 
             <div class="form-group">
               <label class="form-label" for="profile">Je suis un(e)...</label>
-              <select class="form-select" id="profile" name="profile" required>
+              <select class="form-select" id="profile" name="profile" required data-fs-field>
                 <option value="" disabled selected>Sélectionnez votre profil</option>
                 <option value="marque">Marque / Entreprise privée</option>
                 <option value="institution">Institution / Organisme public</option>
@@ -127,33 +134,34 @@
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="firstname">Prénom</label>
-                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Votre prénom" required>
+                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Votre prénom" required data-fs-field>
               </div>
               <div class="form-group">
                 <label class="form-label" for="lastname">Nom</label>
-                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Votre nom" required>
+                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Votre nom" required data-fs-field>
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="email">Email professionnel</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="nom@organisation.com" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="nom@organisation.com" required data-fs-field>
+                <span data-fs-error="email" class="form-field-error"></span>
               </div>
               <div class="form-group">
                 <label class="form-label" for="phone">Téléphone</label>
-                <input type="tel" class="form-control" id="phone" name="phone" placeholder="+212 6 00 00 00 00">
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="+212 6 00 00 00 00" data-fs-field>
               </div>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="organization">Organisation / Marque</label>
-              <input type="text" class="form-control" id="organization" name="organization" placeholder="Nom de votre organisation">
+              <input type="text" class="form-control" id="organization" name="organization" placeholder="Nom de votre organisation" data-fs-field>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="service">Type de prestation</label>
-              <select class="form-select" id="service" name="service">
+              <select class="form-select" id="service" name="service" data-fs-field>
                 <option value="" disabled selected>Sélectionnez un service</option>
                 <option value="evenement">Organisation d'événement</option>
                 <option value="activation">Activation & Brand Experience</option>
@@ -168,10 +176,10 @@
 
             <div class="form-group">
               <label class="form-label" for="message">Décrivez votre projet</label>
-              <textarea class="form-control" id="message" name="message" placeholder="Contexte, objectifs, budget indicatif, délais..."></textarea>
+              <textarea class="form-control" id="message" name="message" placeholder="Contexte, objectifs, budget indicatif, délais..." data-fs-field></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;" data-fs-submit-btn>
               Envoyer le Brief
             </button>
 
@@ -292,6 +300,11 @@
     </div>
   </footer>
 
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#contact-form', formId: 'mwvdnzzk' });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1.1.5/dist/global.js" integrity="sha384-9fQrvHz7unHjhv7e+pJqhvNxPV4tYHHsSn3PxBIEyPTGY8Q/PAKM1sfhL+zTYmhc" crossorigin="anonymous" defer></script>
   <script src="app.js"></script>
 </body>
 </html>
