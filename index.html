@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -7,16 +7,35 @@
   <title>Dazzlea — Experience Marketing Agency</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta name="description" content="Dazzlea — Agence de marketing expérientiel de référence au Maroc. Stratégie, création, production et PR clé en main pour marques internationales et institutions.">
+<link rel="canonical" href="https://www.dazzlea.ma/index.html">
 <meta property="og:title" content="Dazzlea — Experience Marketing Agency">
 <meta property="og:description" content="De la stratégie au reporting, Dazzlea déploie chaque expérience de bout en bout depuis Casablanca.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://www.dazzlea.ma/index.html">
 <meta property="og:image" content="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200">
 <meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Dazzlea",
+  "url": "https://www.dazzlea.ma/",
+  "logo": "https://www.dazzlea.ma/assets/logo/dazzlea-logo-white.png",
+  "description": "Dazzlea est l'agence de marketing expérientiel de référence au Maroc — stratégie, création, production et PR clé en main pour marques internationales et institutions.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Casablanca",
+    "addressCountry": "MA"
+  },
+  "email": "hello@dazzlea.ma",
+  "sameAs": []
+}
+</script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -29,7 +48,7 @@
   <header class="banner" id="mainHeader">
     <div class="navbar-container">
       <a class="navbar-brand" href="index.html">
-        <span class="logo-text">Dazzlea</span>
+        <img src="assets/logo/dazzlea-logo-white.png" alt="Dazzlea" class="navbar-logo-img" width="220" height="33">
       </a>
 
       <nav class="nav-primary">
@@ -42,11 +61,9 @@
                 <div class="mega-col">
                   <span class="mega-col-title">Par Catégorie</span>
                   <a href="portfolio.html?filter=events" class="mega-link">Événements & Galas</a>
-                  <a href="portfolio.html?filter=conseil" class="mega-link">Conseil & Stratégie</a>
-                  <a href="portfolio.html?filter=creation" class="mega-link">Création & Branding</a>
-                  <a href="portfolio.html?filter=digital" class="mega-link">Digital & Web</a>
-                  <a href="portfolio.html?filter=pr" class="mega-link">PR & Communication</a>
-                  <a href="portfolio.html?filter=media" class="mega-link">Média & Planning</a>
+                  <a href="portfolio.html?filter=activation" class="mega-link">Activation</a>
+                  <a href="portfolio.html?filter=scenographie" class="mega-link">Scénographie & Stand</a>
+                  <a href="portfolio.html?filter=institutionnel" class="mega-link">Institutionnel</a>
                 </div>
                 <div class="mega-col">
                   <span class="mega-col-title">Projets Récents</span>
@@ -137,7 +154,7 @@
     <!-- Hero Section with Premium Photo background -->
     <section class="hero-section">
       <div class="hero-image-container">
-        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070" alt="GPJ Live Event Experience" class="hero-img">
+        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070" alt="Expérience événementielle Dazzlea" class="hero-img" width="2070" height="1380" fetchpriority="high">
         <div class="hero-gradient-overlay"></div>
       </div>
       <div class="hero-content">
@@ -207,8 +224,8 @@
         <div class="grid-card reveal-fade-up">
           <a class="card-link accent-overlay" href="case-the-bridge.html">
             <div class="card-image-wrap">
-              <video class="card-img" autoplay muted loop playsinline>
-                <source src="assets/THE BRIDGE - BEST OF Video.mp4" type="video/mp4">
+              <video class="card-img" autoplay muted loop playsinline poster="assets/bridge-best-of-poster.jpg">
+                <source src="assets/bridge-best-of.mp4" type="video/mp4">
               </video>
             </div>
             <div class="card-caption">
@@ -283,7 +300,7 @@
         <div class="grid-card explore-card reveal-fade-up">
           <div class="explore-content-wrap">
             <h2 class="experience-title">Nos<br><strong>Réalisations</strong></h2>
-            <a href="#archive" class="btn btn-outline-white">Voir le Portfolio</a>
+            <a href="portfolio.html" class="btn btn-outline-white">Voir le Portfolio</a>
           </div>
         </div>
 
@@ -337,78 +354,78 @@
             <!-- Column 1 — scrolls UP -->
             <div class="marquee-col marquee-up">
               <div class="marquee-col-group">
-                <div class="logo-item"><img src="assets/icons8-amazon-100.png" alt="Amazon"></div>
-                <div class="logo-item"><img src="assets/icons8-google-100.png" alt="Google"></div>
-                <div class="logo-item"><img src="assets/icons8-meta-100.png" alt="Meta"></div>
-                <div class="logo-item"><img src="assets/icons8-microsoft-100.png" alt="Microsoft"></div>
-                <div class="logo-item"><img src="assets/icons8-oracle-logo-100.png" alt="Oracle"></div>
-                <div class="logo-item"><img src="assets/icons8-disney-logo-100.png" alt="Disney"></div>
-                <div class="logo-item"><img src="assets/icons8-lenovo-100.png" alt="Lenovo"></div>
-                <div class="logo-item"><img src="assets/icons8-logo-100-3.png" alt="KIA"></div>
-                <div class="logo-item"><img src="assets/icons8-logo-100.png" alt="iHerb"></div>
+                <div class="logo-item"><img src="assets/icons8-amazon-100.png" width="100" height="100" loading="lazy" alt="Amazon"></div>
+                <div class="logo-item"><img src="assets/icons8-google-100.png" width="100" height="100" loading="lazy" alt="Google"></div>
+                <div class="logo-item"><img src="assets/icons8-meta-100.png" width="100" height="100" loading="lazy" alt="Meta"></div>
+                <div class="logo-item"><img src="assets/icons8-microsoft-100.png" width="100" height="100" loading="lazy" alt="Microsoft"></div>
+                <div class="logo-item"><img src="assets/icons8-oracle-logo-100.png" width="100" height="100" loading="lazy" alt="Oracle"></div>
+                <div class="logo-item"><img src="assets/icons8-disney-logo-100.png" width="100" height="100" loading="lazy" alt="Disney"></div>
+                <div class="logo-item"><img src="assets/icons8-lenovo-100.png" width="100" height="100" loading="lazy" alt="Lenovo"></div>
+                <div class="logo-item"><img src="assets/icons8-logo-100-3.png" width="100" height="100" loading="lazy" alt="KIA"></div>
+                <div class="logo-item"><img src="assets/icons8-logo-100.png" width="100" height="100" loading="lazy" alt="iHerb"></div>
               </div>
               <div class="marquee-col-group" aria-hidden="true">
-                <div class="logo-item"><img src="assets/icons8-amazon-100.png" alt="Amazon"></div>
-                <div class="logo-item"><img src="assets/icons8-google-100.png" alt="Google"></div>
-                <div class="logo-item"><img src="assets/icons8-meta-100.png" alt="Meta"></div>
-                <div class="logo-item"><img src="assets/icons8-microsoft-100.png" alt="Microsoft"></div>
-                <div class="logo-item"><img src="assets/icons8-oracle-logo-100.png" alt="Oracle"></div>
-                <div class="logo-item"><img src="assets/icons8-disney-logo-100.png" alt="Disney"></div>
-                <div class="logo-item"><img src="assets/icons8-lenovo-100.png" alt="Lenovo"></div>
-                <div class="logo-item"><img src="assets/icons8-logo-100-3.png" alt="KIA"></div>
-                <div class="logo-item"><img src="assets/icons8-logo-100.png" alt="iHerb"></div>
+                <div class="logo-item"><img src="assets/icons8-amazon-100.png" width="100" height="100" loading="lazy" alt="Amazon"></div>
+                <div class="logo-item"><img src="assets/icons8-google-100.png" width="100" height="100" loading="lazy" alt="Google"></div>
+                <div class="logo-item"><img src="assets/icons8-meta-100.png" width="100" height="100" loading="lazy" alt="Meta"></div>
+                <div class="logo-item"><img src="assets/icons8-microsoft-100.png" width="100" height="100" loading="lazy" alt="Microsoft"></div>
+                <div class="logo-item"><img src="assets/icons8-oracle-logo-100.png" width="100" height="100" loading="lazy" alt="Oracle"></div>
+                <div class="logo-item"><img src="assets/icons8-disney-logo-100.png" width="100" height="100" loading="lazy" alt="Disney"></div>
+                <div class="logo-item"><img src="assets/icons8-lenovo-100.png" width="100" height="100" loading="lazy" alt="Lenovo"></div>
+                <div class="logo-item"><img src="assets/icons8-logo-100-3.png" width="100" height="100" loading="lazy" alt="KIA"></div>
+                <div class="logo-item"><img src="assets/icons8-logo-100.png" width="100" height="100" loading="lazy" alt="iHerb"></div>
               </div>
             </div>
 
             <!-- Column 2 — scrolls DOWN -->
             <div class="marquee-col marquee-down">
               <div class="marquee-col-group">
-                <div class="logo-item"><img src="assets/icons8-disney-logo-100.png" alt="Disney"></div>
-                <div class="logo-item"><img src="assets/icons8-lenovo-100.png" alt="Lenovo"></div>
-                <div class="logo-item"><img src="assets/icons8-logo-100-3.png" alt="KIA"></div>
-                <div class="logo-item"><img src="assets/icons8-logo-100.png" alt="iHerb"></div>
-                <div class="logo-item"><img src="assets/icons8-amazon-100.png" alt="Amazon"></div>
-                <div class="logo-item"><img src="assets/icons8-oracle-logo-100.png" alt="Oracle"></div>
-                <div class="logo-item"><img src="assets/icons8-google-100.png" alt="Google"></div>
-                <div class="logo-item"><img src="assets/icons8-meta-100.png" alt="Meta"></div>
-                <div class="logo-item"><img src="assets/icons8-microsoft-100.png" alt="Microsoft"></div>
+                <div class="logo-item"><img src="assets/icons8-disney-logo-100.png" width="100" height="100" loading="lazy" alt="Disney"></div>
+                <div class="logo-item"><img src="assets/icons8-lenovo-100.png" width="100" height="100" loading="lazy" alt="Lenovo"></div>
+                <div class="logo-item"><img src="assets/icons8-logo-100-3.png" width="100" height="100" loading="lazy" alt="KIA"></div>
+                <div class="logo-item"><img src="assets/icons8-logo-100.png" width="100" height="100" loading="lazy" alt="iHerb"></div>
+                <div class="logo-item"><img src="assets/icons8-amazon-100.png" width="100" height="100" loading="lazy" alt="Amazon"></div>
+                <div class="logo-item"><img src="assets/icons8-oracle-logo-100.png" width="100" height="100" loading="lazy" alt="Oracle"></div>
+                <div class="logo-item"><img src="assets/icons8-google-100.png" width="100" height="100" loading="lazy" alt="Google"></div>
+                <div class="logo-item"><img src="assets/icons8-meta-100.png" width="100" height="100" loading="lazy" alt="Meta"></div>
+                <div class="logo-item"><img src="assets/icons8-microsoft-100.png" width="100" height="100" loading="lazy" alt="Microsoft"></div>
               </div>
               <div class="marquee-col-group" aria-hidden="true">
-                <div class="logo-item"><img src="assets/icons8-disney-logo-100.png" alt="Disney"></div>
-                <div class="logo-item"><img src="assets/icons8-lenovo-100.png" alt="Lenovo"></div>
-                <div class="logo-item"><img src="assets/icons8-logo-100-3.png" alt="KIA"></div>
-                <div class="logo-item"><img src="assets/icons8-logo-100.png" alt="iHerb"></div>
-                <div class="logo-item"><img src="assets/icons8-amazon-100.png" alt="Amazon"></div>
-                <div class="logo-item"><img src="assets/icons8-oracle-logo-100.png" alt="Oracle"></div>
-                <div class="logo-item"><img src="assets/icons8-google-100.png" alt="Google"></div>
-                <div class="logo-item"><img src="assets/icons8-meta-100.png" alt="Meta"></div>
-                <div class="logo-item"><img src="assets/icons8-microsoft-100.png" alt="Microsoft"></div>
+                <div class="logo-item"><img src="assets/icons8-disney-logo-100.png" width="100" height="100" loading="lazy" alt="Disney"></div>
+                <div class="logo-item"><img src="assets/icons8-lenovo-100.png" width="100" height="100" loading="lazy" alt="Lenovo"></div>
+                <div class="logo-item"><img src="assets/icons8-logo-100-3.png" width="100" height="100" loading="lazy" alt="KIA"></div>
+                <div class="logo-item"><img src="assets/icons8-logo-100.png" width="100" height="100" loading="lazy" alt="iHerb"></div>
+                <div class="logo-item"><img src="assets/icons8-amazon-100.png" width="100" height="100" loading="lazy" alt="Amazon"></div>
+                <div class="logo-item"><img src="assets/icons8-oracle-logo-100.png" width="100" height="100" loading="lazy" alt="Oracle"></div>
+                <div class="logo-item"><img src="assets/icons8-google-100.png" width="100" height="100" loading="lazy" alt="Google"></div>
+                <div class="logo-item"><img src="assets/icons8-meta-100.png" width="100" height="100" loading="lazy" alt="Meta"></div>
+                <div class="logo-item"><img src="assets/icons8-microsoft-100.png" width="100" height="100" loading="lazy" alt="Microsoft"></div>
               </div>
             </div>
 
             <!-- Column 3 — scrolls UP (offset timing) -->
             <div class="marquee-col marquee-up marquee-up-alt">
               <div class="marquee-col-group">
-                <div class="logo-item"><img src="assets/icons8-meta-100.png" alt="Meta"></div>
-                <div class="logo-item"><img src="assets/icons8-microsoft-100.png" alt="Microsoft"></div>
-                <div class="logo-item"><img src="assets/icons8-amazon-100.png" alt="Amazon"></div>
-                <div class="logo-item"><img src="assets/icons8-google-100.png" alt="Google"></div>
-                <div class="logo-item"><img src="assets/icons8-logo-100-3.png" alt="KIA"></div>
-                <div class="logo-item"><img src="assets/icons8-oracle-logo-100.png" alt="Oracle"></div>
-                <div class="logo-item"><img src="assets/icons8-lenovo-100.png" alt="Lenovo"></div>
-                <div class="logo-item"><img src="assets/icons8-disney-logo-100.png" alt="Disney"></div>
-                <div class="logo-item"><img src="assets/icons8-logo-100.png" alt="iHerb"></div>
+                <div class="logo-item"><img src="assets/icons8-meta-100.png" width="100" height="100" loading="lazy" alt="Meta"></div>
+                <div class="logo-item"><img src="assets/icons8-microsoft-100.png" width="100" height="100" loading="lazy" alt="Microsoft"></div>
+                <div class="logo-item"><img src="assets/icons8-amazon-100.png" width="100" height="100" loading="lazy" alt="Amazon"></div>
+                <div class="logo-item"><img src="assets/icons8-google-100.png" width="100" height="100" loading="lazy" alt="Google"></div>
+                <div class="logo-item"><img src="assets/icons8-logo-100-3.png" width="100" height="100" loading="lazy" alt="KIA"></div>
+                <div class="logo-item"><img src="assets/icons8-oracle-logo-100.png" width="100" height="100" loading="lazy" alt="Oracle"></div>
+                <div class="logo-item"><img src="assets/icons8-lenovo-100.png" width="100" height="100" loading="lazy" alt="Lenovo"></div>
+                <div class="logo-item"><img src="assets/icons8-disney-logo-100.png" width="100" height="100" loading="lazy" alt="Disney"></div>
+                <div class="logo-item"><img src="assets/icons8-logo-100.png" width="100" height="100" loading="lazy" alt="iHerb"></div>
               </div>
               <div class="marquee-col-group" aria-hidden="true">
-                <div class="logo-item"><img src="assets/icons8-meta-100.png" alt="Meta"></div>
-                <div class="logo-item"><img src="assets/icons8-microsoft-100.png" alt="Microsoft"></div>
-                <div class="logo-item"><img src="assets/icons8-amazon-100.png" alt="Amazon"></div>
-                <div class="logo-item"><img src="assets/icons8-google-100.png" alt="Google"></div>
-                <div class="logo-item"><img src="assets/icons8-logo-100-3.png" alt="KIA"></div>
-                <div class="logo-item"><img src="assets/icons8-oracle-logo-100.png" alt="Oracle"></div>
-                <div class="logo-item"><img src="assets/icons8-lenovo-100.png" alt="Lenovo"></div>
-                <div class="logo-item"><img src="assets/icons8-disney-logo-100.png" alt="Disney"></div>
-                <div class="logo-item"><img src="assets/icons8-logo-100.png" alt="iHerb"></div>
+                <div class="logo-item"><img src="assets/icons8-meta-100.png" width="100" height="100" loading="lazy" alt="Meta"></div>
+                <div class="logo-item"><img src="assets/icons8-microsoft-100.png" width="100" height="100" loading="lazy" alt="Microsoft"></div>
+                <div class="logo-item"><img src="assets/icons8-amazon-100.png" width="100" height="100" loading="lazy" alt="Amazon"></div>
+                <div class="logo-item"><img src="assets/icons8-google-100.png" width="100" height="100" loading="lazy" alt="Google"></div>
+                <div class="logo-item"><img src="assets/icons8-logo-100-3.png" width="100" height="100" loading="lazy" alt="KIA"></div>
+                <div class="logo-item"><img src="assets/icons8-oracle-logo-100.png" width="100" height="100" loading="lazy" alt="Oracle"></div>
+                <div class="logo-item"><img src="assets/icons8-lenovo-100.png" width="100" height="100" loading="lazy" alt="Lenovo"></div>
+                <div class="logo-item"><img src="assets/icons8-disney-logo-100.png" width="100" height="100" loading="lazy" alt="Disney"></div>
+                <div class="logo-item"><img src="assets/icons8-logo-100.png" width="100" height="100" loading="lazy" alt="iHerb"></div>
               </div>
             </div>
 
@@ -425,7 +442,7 @@
         <!-- Block 1 -->
         <div class="timeline-row reveal-fade-up">
           <div class="timeline-media">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070" alt="Insightful Strategy" class="timeline-img">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070" width="2070" height="1380" loading="lazy" alt="Insightful Strategy" class="timeline-img">
           </div>
           <div class="timeline-text">
             <h3 class="timeline-heading">Insightful Strategy</h3>
@@ -437,7 +454,7 @@
         <!-- Block 2 (Media Right) -->
         <div class="timeline-row timeline-reverse reveal-fade-up">
           <div class="timeline-media">
-            <img src="https://images.unsplash.com/photo-1556761175-b813d53a962e?q=80&w=2074" alt="Fearless Creativity" class="timeline-img">
+            <img src="https://images.unsplash.com/photo-1556761175-b813d53a962e?q=80&w=2074" width="2070" height="1380" loading="lazy" alt="Fearless Creativity" class="timeline-img">
           </div>
           <div class="timeline-text">
             <h3 class="timeline-heading">Fearless Creativity</h3>
@@ -449,7 +466,7 @@
         <!-- Block 3 -->
         <div class="timeline-row reveal-fade-up">
           <div class="timeline-media">
-            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070" alt="Innovative Production" class="timeline-img">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070" width="2070" height="1380" loading="lazy" alt="Innovative Production" class="timeline-img">
           </div>
           <div class="timeline-text">
             <h3 class="timeline-heading">Innovative Production</h3>
@@ -461,7 +478,7 @@
         <!-- Block 4 (Media Right) -->
         <div class="timeline-row timeline-reverse reveal-fade-up">
           <div class="timeline-media">
-            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070" alt="Specialty Services" class="timeline-img">
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070" width="2070" height="1380" loading="lazy" alt="Specialty Services" class="timeline-img">
           </div>
           <div class="timeline-text">
             <h3 class="timeline-heading">Specialty Services</h3>
@@ -473,7 +490,7 @@
         <!-- Block 5 -->
         <div class="timeline-row reveal-fade-up">
           <div class="timeline-media">
-            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072" alt="Le Hub de Casablanca" class="timeline-img">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072" width="2070" height="1380" loading="lazy" alt="Le Hub de Casablanca" class="timeline-img">
           </div>
           <div class="timeline-text">
             <h3 class="timeline-heading">Le Hub de Casablanca</h3>
@@ -485,7 +502,7 @@
         <!-- Block 6 (Media Right) -->
         <div class="timeline-row timeline-reverse reveal-fade-up">
           <div class="timeline-media">
-            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070" alt="Analytics & Media Planning" class="timeline-img">
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070" width="2070" height="1380" loading="lazy" alt="Analytics & Media Planning" class="timeline-img">
           </div>
           <div class="timeline-text">
             <h3 class="timeline-heading">Analytics & Media Planning</h3>
@@ -497,7 +514,7 @@
         <!-- Block 7 -->
         <div class="timeline-row reveal-fade-up">
           <div class="timeline-media">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070" alt="Content & Digital" class="timeline-img">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070" width="2070" height="1380" loading="lazy" alt="Content & Digital" class="timeline-img">
           </div>
           <div class="timeline-text">
             <h3 class="timeline-heading">Content Creation & Digital</h3>
@@ -537,9 +554,9 @@
         <div class="footer-col">
           <h3 class="footer-col-title">Legal</h3>
           <ul class="footer-links">
-            <li><a href="#">Politique de Confidentialité</a></li>
-            <li><a href="#">Politique Cookies</a></li>
-            <li><a href="#">Conditions d'Utilisation</a></li>
+            <li><a href="privacy-policy.html">Politique de Confidentialité</a></li>
+            <li><a href="cookie-policy.html">Politique Cookies</a></li>
+            <li><a href="terms-of-use.html">Conditions d'Utilisation</a></li>
           </ul>
         </div>
         <div class="footer-col">

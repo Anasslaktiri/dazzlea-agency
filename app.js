@@ -29,6 +29,9 @@
   const mobileNav    = document.getElementById('mobileNavPanel');
 
   if (mobileToggle && mobileNav) {
+    mobileToggle.setAttribute('aria-expanded', 'false');
+    mobileToggle.setAttribute('aria-controls', mobileNav.id);
+
     mobileToggle.addEventListener('click', () => {
       const isOpen = mobileNav.classList.toggle('open');
       mobileToggle.classList.toggle('open', isOpen);
@@ -47,22 +50,33 @@
   const megaItems = document.querySelectorAll('.nav-has-mega');
   let megaTimeout = null;
 
+  function openMega(item) {
+    clearTimeout(megaTimeout);
+    megaItems.forEach(other => {
+      if (other !== item) other.classList.remove('mega-open');
+    });
+    item.classList.add('mega-open');
+  }
+
+  function scheduleCloseMega(item) {
+    megaTimeout = setTimeout(() => {
+      item.classList.remove('mega-open');
+    }, 180);
+  }
+
   megaItems.forEach(item => {
     const panel = item.querySelector('.mega-menu-panel');
 
-    item.addEventListener('mouseenter', () => {
-      clearTimeout(megaTimeout);
-      // Close all other mega menus
-      megaItems.forEach(other => {
-        if (other !== item) other.classList.remove('mega-open');
-      });
-      item.classList.add('mega-open');
-    });
+    item.addEventListener('mouseenter', () => openMega(item));
+    item.addEventListener('mouseleave', () => scheduleCloseMega(item));
 
-    item.addEventListener('mouseleave', () => {
-      megaTimeout = setTimeout(() => {
-        item.classList.remove('mega-open');
-      }, 180);
+    // Keyboard support: open on focus-in anywhere inside the item,
+    // close when focus moves outside both the trigger and the panel.
+    item.addEventListener('focusin', () => openMega(item));
+    item.addEventListener('focusout', (e) => {
+      if (!item.contains(e.relatedTarget)) {
+        scheduleCloseMega(item);
+      }
     });
 
     if (panel) {
@@ -70,17 +84,19 @@
         clearTimeout(megaTimeout);
       });
 
-      panel.addEventListener('mouseleave', () => {
-        megaTimeout = setTimeout(() => {
-          item.classList.remove('mega-open');
-        }, 180);
-      });
+      panel.addEventListener('mouseleave', () => scheduleCloseMega(item));
     }
   });
 
-  // Close mega-menu on outside click
+  // Close mega-menu on outside click, or Escape key
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.nav-has-mega')) {
+      megaItems.forEach(item => item.classList.remove('mega-open'));
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
       megaItems.forEach(item => item.classList.remove('mega-open'));
     }
   });
@@ -93,6 +109,8 @@
     langBtns.forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
     });
+
+    document.documentElement.setAttribute('lang', lang);
 
     // Swap all translatable elements
     document.querySelectorAll('[data-fr]').forEach(el => {
@@ -188,12 +206,43 @@
 
   sections.forEach(sec => sectionObserver.observe(sec));
 
-  /* ── Pause marquee on reduced motion ─────────── */
+  /* ── Pause marquee & autoplaying video on reduced motion ─── */
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (prefersReduced.matches) {
     document.querySelectorAll('.marquee-up, .marquee-down').forEach(el => {
       el.style.animationPlayState = 'paused';
     });
+    document.querySelectorAll('video[autoplay]').forEach(video => {
+      video.removeAttribute('autoplay');
+      video.pause();
+      video.setAttribute('controls', '');
+    });
+  } else {
+    /* ── Lazy-load & lazy-play background videos ────────────
+       Autoplaying videos only fetch/play once scrolled into view,
+       instead of every card on the page loading & decoding at once. */
+    const bgVideos = document.querySelectorAll('video[autoplay]');
+
+    bgVideos.forEach(video => {
+      video.removeAttribute('autoplay');
+      video.preload = 'none';
+    });
+
+    const videoObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          const video = entry.target;
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    bgVideos.forEach(video => videoObserver.observe(video));
   }
 
   /* ── Counter Animation ───────────────────────── */
@@ -248,25 +297,30 @@
   const filterBtns  = document.querySelectorAll('.filter-btn');
   const portfolioCards = document.querySelectorAll('.portfolio-card');
 
+  function applyFilter(filter) {
+    filterBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === filter));
+
+    portfolioCards.forEach(card => {
+      if (filter === 'all') {
+        card.classList.remove('hidden');
+      } else {
+        const categories = (card.dataset.category || '').split(' ');
+        card.classList.toggle('hidden', !categories.includes(filter));
+      }
+    });
+  }
+
   if (filterBtns.length > 0) {
     filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Update active button
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.dataset.filter;
-
-        portfolioCards.forEach(card => {
-          if (filter === 'all') {
-            card.classList.remove('hidden');
-          } else {
-            const match = card.dataset.category === filter;
-            card.classList.toggle('hidden', !match);
-          }
-        });
-      });
+      btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
     });
+
+    // Honor ?filter= from links elsewhere on the site (e.g. the mega-menu)
+    const params = new URLSearchParams(window.location.search);
+    const requestedFilter = params.get('filter');
+    if (requestedFilter && document.querySelector(`.filter-btn[data-filter="${requestedFilter}"]`)) {
+      applyFilter(requestedFilter);
+    }
   }
 
 })();

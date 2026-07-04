@@ -198,6 +198,12 @@ ul {
   color: var(--color-white);
 }
 
+.navbar-logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
 /* Desktop Nav Links */
 .nav-primary {
   display: flex;
